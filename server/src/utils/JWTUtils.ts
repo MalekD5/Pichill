@@ -27,7 +27,13 @@ export const createTokens = (user: IUser): string[] => {
 
 export const jwtCookieOptions: CookieOptions = {
   httpOnly: true, // prevent browser javascript from accessing the cookie
-  secure: true, // this forces the cookie to be sent over https only, remove in development
+  //secure: true, // this forces the cookie to be sent over https only, remove in development
   sameSite: 'none',
   maxAge: 24 * 60 * 60 * 1000, // 1 day
+};
+
+export const jwtClearCookieOptions = {
+  httpOnly: jwtCookieOptions.httpOnly,
+  sameSite: jwtCookieOptions.sameSite,
+  //secure: jwtCookieOptions.secure,
 };
