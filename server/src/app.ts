@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
 
 import mongoose from 'mongoose';
 
@@ -21,6 +22,8 @@ app.use(bodyParser.json({ limit: LIMIT }));
 app.use(bodyParser.urlencoded({ limit: LIMIT, extended: true }));
 app.use(cors(options.cors));
 app.use(cookieParser());
+
+app.use(mongoSanitize());
 
 app.use('/api/v1', rootRouter);
 
