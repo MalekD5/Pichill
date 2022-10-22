@@ -4,10 +4,7 @@ import userModel from '../../models/userModel';
 import jwt from 'jsonwebtoken';
 
 export const refreshController = async (req: Request, res: Response) => {
-  const cookies = req.cookies;
-  if (!cookies?.jwt) return res.sendStatus(401);
-
-  const refreshToken = cookies.jwt;
+  const refreshToken = req.cookies.jwt;
 
   const user = await userModel.findOne({ refreshToken }).exec();
   if (!user) return res.sendStatus(403);
