@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["vite.config.ts", "tailwind.config.cjs"],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "quotes": "off",
+    "comma-dangle": "off",
+    "linebreak-style": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "jsx-quotes": [2, "prefer-single"],
+    "@typescript-eslint/quotes": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "prettier/prettier": "error",
+    "react/self-closing-comp": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": ["Input", "Checkbox"],
+        "labelComponents": ["Label"],
+        "labelAttributes": ["label"],
+        "assert": "htmlFor",
+        "depth": 3
+      }
+    ]
+  }
+}
